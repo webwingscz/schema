@@ -7,6 +7,14 @@ Nette Schema
 [![Latest Stable Version](https://poser.pugx.org/nette/schema/v/stable)](https://github.com/nette/schema/releases)
 [![License](https://img.shields.io/badge/license-New%20BSD-blue.svg)](https://github.com/nette/schema/blob/master/license.md)
 
+Disclaimer
+============
+
+This is a version of nette/schema package backported to Nette 2.4. If you are using Nette 3,
+you should be interested in [original nette/schema package](https://github.com/nette/schema) instead.
+
+All credits go to [David Grudl](https://davidgrudl.com).
+
 
 Introduction
 ============
@@ -24,7 +32,7 @@ Installation
 The recommended way to install is via Composer:
 
 ```
-composer require nette/schema
+composer require webwings/schema
 ```
 
 It requires PHP version 7.1 and supports PHP up to 7.4.
