@@ -10,7 +10,7 @@ declare(strict_types=1);
 namespace Nette\Schema;
 
 use Nette;
-use Nette\Utils\Reflection;
+use Nette\Schema\Utils\Reflection;
 
 
 /**
@@ -94,7 +94,7 @@ final class Helpers
 		if (is_object($value)) {
 			return 'object ' . get_class($value);
 		} elseif (is_string($value)) {
-			return "'" . Nette\Utils\Strings::truncate($value, 15, '...') . "'";
+			return "'" . Nette\Schema\Utils\Strings::truncate($value, 15, '...') . "'";
 		} elseif (is_scalar($value)) {
 			return var_export($value, true);
 		} else {

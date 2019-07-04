@@ -115,7 +115,7 @@ trait Base
 
 	private function doValidate($value, string $expected, Context $context): bool
 	{
-		if (!Nette\Utils\Validators::is($value, $expected)) {
+		if (!Nette\Schema\Utils\Validators::is($value, $expected)) {
 			$expected = str_replace(['|', ':'], [' or ', ' in range '], $expected);
 			$context->addError(
 				'The %label% %path% expects to be %expected%, %value% given.',
@@ -134,7 +134,7 @@ trait Base
 			[$length, $label] = is_array($value)
 				? [count($value), 'items']
 				: (in_array('unicode', explode('|', $types), true)
-					? [Nette\Utils\Strings::length($value), 'characters']
+					? [Nette\Schema\Utils\Strings::length($value), 'characters']
 					: [strlen($value), 'bytes']);
 
 			if (!self::isInRange($length, $range)) {
@@ -168,10 +168,10 @@ trait Base
 	private function doFinalize($value, Context $context)
 	{
 		if ($this->castTo) {
-			if (Nette\Utils\Reflection::isBuiltinType($this->castTo)) {
+			if (Nette\Schema\Utils\Reflection::isBuiltinType($this->castTo)) {
 				settype($value, $this->castTo);
 			} else {
-				$value = Nette\Utils\Arrays::toObject($value, new $this->castTo);
+				$value = Nette\Schema\Utils\Arrays::toObject($value, new $this->castTo);
 			}
 		}
 
