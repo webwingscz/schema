@@ -91,7 +91,7 @@ trait Base
 	private function doValidate($value, string $expected, Context $context): bool
 	{
 		try {
-			Nette\Utils\Validators::assert($value, $expected, 'option %path%');
+			Nette\Schema\Utils\Validators::assert($value, $expected, 'option %path%');
 			return true;
 		} catch (Nette\Utils\AssertionException $e) {
 			$context->addError($e->getMessage(), $expected);
@@ -103,10 +103,10 @@ trait Base
 	private function doFinalize($value, Context $context)
 	{
 		if ($this->castTo) {
-			if (Nette\Utils\Reflection::isBuiltinType($this->castTo)) {
+			if (Nette\Schema\Utils\Reflection::isBuiltinType($this->castTo)) {
 				settype($value, $this->castTo);
 			} else {
-				$value = Nette\Utils\Arrays::toObject($value, new $this->castTo);
+				$value = Nette\Schema\Utils\Arrays::toObject($value, new $this->castTo);
 			}
 		}
 

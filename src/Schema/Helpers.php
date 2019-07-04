@@ -10,7 +10,7 @@ declare(strict_types=1);
 namespace Nette\Schema;
 
 use Nette;
-use Nette\Utils\Reflection;
+use Nette\Schema\Utils\Reflection;
 
 
 /**
