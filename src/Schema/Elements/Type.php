@@ -84,7 +84,7 @@ final class Type implements Schema
 
 
 	/**
-	 * @param  string|Schema  $type
+	 * @param  string|Schema  $valueType
 	 * @internal  use arrayOf() or listOf()
 	 */
 	public function items($valueType = 'mixed', $keyType = null): self

@@ -98,7 +98,7 @@ final class Expect
 
 
 	/**
-	 * @param  string|Schema  $type
+	 * @param  string|Schema  $valueType
 	 */
 	public static function arrayOf($valueType, $keyType = null): Type
 	{
